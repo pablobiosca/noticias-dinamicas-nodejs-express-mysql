@@ -1,9 +1,20 @@
 const express = require('express');
+
 const router = express.Router();
+
+const mysql = require("../config/dbconnection")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render("news/news",{title:"hola desde news"});
+
+  const connection = mysql()
+  connection.query("select * from news",(error,resul) =>{
+
+
+    res.render("news/news",{news:resul});
+    console.log(resul)
+  })
+
 });
 
 module.exports = router;

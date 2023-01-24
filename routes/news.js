@@ -38,11 +38,9 @@ router.get('/', function(req, res, next) {
       botones["siguiente"] = false
     }
 
-    if (limite + 5 == ultimo_valor){
+    if (limite + 5 >= ultimo_valor){
       botones["siguiente"] = false
     }
-
-
 
     console.log(botones)
     connection.query(`select * from news limit ${limite},5`,(error,resul) =>{

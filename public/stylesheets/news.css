@@ -1,3 +1,17 @@
 nav{
-    background: ;
+    background: black;
+
+}
+
+body{
+    background: grey;
+    color: white;
+}
+
+#papa{
+    background: grey;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
 }
